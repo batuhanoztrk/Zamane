@@ -148,4 +148,60 @@ public sealed class TimeStampClient
             .ReadAsByteArrayAsync()
             .ConfigureAwait(false);
     }
+
+    /// <summary>
+    /// Sends a timestamp request to the Zamane server synchronously and
+    /// returns the DER-encoded <c>TimeStampResp</c> bytes.
+    /// </summary>
+    /// <param name="customerNo">
+    /// KamuSM customer number, as a decimal string.
+    /// </param>
+    /// <param name="password">KamuSM customer password.</param>
+    /// <param name="timeStampReq">
+    /// The DER-encoded RFC 3161 <c>TimeStampReq</c>.
+    /// </param>
+    /// <param name="cancellationToken">
+    /// A token used to cancel the operation.
+    /// </param>
+    /// <returns>
+    /// The DER-encoded <c>TimeStampResp</c> bytes.
+    /// </returns>
+    /// <remarks>
+    /// This method blocks the calling thread until the timestamp response
+    /// is received. For non-blocking I/O, use
+    /// <see cref="RequestTimestampAsync(string,string,byte[],CancellationToken)"/>.
+    /// </remarks>
+    /// <exception cref="HttpRequestException">
+    /// Thrown when the server returns a non-success HTTP status code.
+    /// </exception>
+    public byte[] RequestTimestamp(
+        string customerNo,
+        string password,
+        byte[] timeStampReq,
+        CancellationToken cancellationToken = default)
+    {
+        return RequestTimestampAsync(
+                customerNo,
+                password,
+                timeStampReq,
+                cancellationToken)
+            .GetAwaiter()
+            .GetResult();
+    }
+
+    /// <inheritdoc cref="RequestTimestamp(string,string,byte[],CancellationToken)"/>
+    public byte[] RequestTimestamp(
+        BigInteger customerNo,
+        string password,
+        byte[] timeStampReq,
+        CancellationToken cancellationToken = default)
+    {
+        return RequestTimestampAsync(
+                customerNo,
+                password,
+                timeStampReq,
+                cancellationToken)
+            .GetAwaiter()
+            .GetResult();
+    }
 }
