@@ -1,5 +1,8 @@
 # Zamane
 
+[![NuGet](https://img.shields.io/nuget/v/Zamane.svg)](https://www.nuget.org/packages/Zamane)
+[![NuGet Downloads](https://img.shields.io/nuget/dt/Zamane.svg)](https://www.nuget.org/packages/Zamane)
+
 A small, dependency-free client library for KamuSM's Zamane
 timestamp service. ASN.1 work is done with the built-in
 `System.Formats.Asn1` API, so there are no external NuGet dependencies.
