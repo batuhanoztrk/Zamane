@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>netstandard2.1;net9.0</TargetFrameworks>
+        <LangVersion>latest</LangVersion>
+        <ImplicitUsings>false</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+        <PackageId>Zamane</PackageId>
+        <Version>0.1.0</Version>
+        <Authors>batuhanoztrk</Authors>
+
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+        <RepositoryUrl>https://github.com/batuhanoztrk/Zamane</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageProjectUrl>https://github.com/batuhanoztrk/Zamane</PackageProjectUrl>
+
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+        <PublishRepositoryUrl>true</PublishRepositoryUrl>
+        <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <DebugType>portable</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\README.md" Pack="true" PackagePath="\" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.203" PrivateAssets="All" />
+        <PackageReference Include="Polyfill" Version="8.9.1" PrivateAssets="all" />
+        <PackageReference Include="System.Formats.Asn1" Version="10.0.7" />
+    </ItemGroup>
+
+</Project>
