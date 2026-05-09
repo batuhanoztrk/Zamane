@@ -8,7 +8,6 @@
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
         <PackageId>Zamane</PackageId>
-        <Version>0.1.0</Version>
         <Authors>batuhanoztrk</Authors>
 
         <Description>A .NET client library for KamuSM's Zamane timestamp service. Builds identity tokens, parses RFC 3161 TimeStampReq messages, and posts requests over HTTP.</Description>
